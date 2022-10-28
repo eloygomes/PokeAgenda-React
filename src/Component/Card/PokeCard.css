@@ -1,0 +1,13 @@
+
+
+ul li{
+    list-style: none;
+}
+
+.pkmn-list-title{
+    padding-left: 0px;
+}
+
+.pkmn-list-anwser{
+    padding-right: 0px;
+}
