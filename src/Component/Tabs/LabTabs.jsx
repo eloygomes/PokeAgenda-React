@@ -28,10 +28,10 @@ export default function LabTabs(props) {
           </TabList>
         </Box>
         <TabPanel value="1">
-          <DataGridDemo></DataGridDemo>
-          <ul>
+          <DataGridDemo moves={props.moves}></DataGridDemo>
+          {/* <ul>
             {props.moves.map((move, key)=> <li key={key}>Attack: {key + 1}: {move}</li>)}
-          </ul>
+          </ul> */}
         </TabPanel>
         <TabPanel value="2">
           <ul>

@@ -43,23 +43,24 @@ function Page01() {
     }
 
     const pokeFilter = (name) => {
+        console.log(name)
+
         var filtered = [];
         if (name === "") {
             getPkmn();
         }
-        console.log(name)
+        
 
         for (var i in pokemons) {
             if (pokemons[i].data.name.includes(name)) {
                 filtered.push(pokemons[i])
-            }
-            else {
-                console.log(pokemons[i])
-                // filtered.push(pokemons[i].data.name)       
-            }
+                
+            } 
+ 
         }
         console.log(filtered)
         setPokemons(filtered);
+        console.log(pokemons)
         
     }
 
