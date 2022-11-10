@@ -82,7 +82,8 @@ function Page01() {
                         key={key}
                         data-name="eloy"> 
                         
-                        <PokeCard image={pokemon.data.sprites.front_default}
+                        {/* <PokeCard image={pokemon.data.sprites.front_default} */}
+                        <PokeCard image={pokemon.data.sprites.other.dream_world.front_default}
                             name={pokemon.data.name}
                             NumPokeDex={pokemon.data.id}
                             moves={pokemon.data.moves}

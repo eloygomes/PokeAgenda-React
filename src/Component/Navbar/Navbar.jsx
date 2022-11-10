@@ -51,7 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar({pokeFilter}) {
+export default function Navbar({ pokeFilter }) {
   return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static" sx={{backgroundColor: '#607d8b'}}>
