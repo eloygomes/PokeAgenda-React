@@ -32,8 +32,7 @@ export default function ModalDialog(props) {
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
-        maxWidth='lg'
-      >
+        maxWidth='lg'>
         <DialogTitle id="responsive-dialog-title">
           {"Pokemon Details"}
         </DialogTitle>
@@ -41,7 +40,7 @@ export default function ModalDialog(props) {
 
           <PokeModal PokeImage={props.image} name={props.name} moves={props.moves} types={props.types} pokeNum={props.pokeNum}/>
           
-          <DialogContentText>
+          <DialogContentText sx={{marginTop: 3}}>
             Esse projeto foi desenvolvido por Eloy Gomes, todos os dados fora disponibilizados por API PokeAPI
           </DialogContentText>
         </DialogContent>
