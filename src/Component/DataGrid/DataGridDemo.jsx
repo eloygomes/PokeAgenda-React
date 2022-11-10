@@ -30,10 +30,8 @@ export default function DataGridDemo(props) {
 
   for(var i = 0; i < movesCount.length;i++){
     rows.push({ id: [i], level: [i], attackName: props.moves[i] })
-    
   }
   
-
   return (
     <Box sx={{ height: 450, width: '100%' }}>
       <DataGrid
