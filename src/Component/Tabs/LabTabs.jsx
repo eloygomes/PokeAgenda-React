@@ -7,6 +7,7 @@ import TabPanel from '@material-ui/lab/TabPanel';
 
 import './LabTabs.css';
 import DataGridDemo from '../DataGrid/DataGridDemo';
+// import BasicTable from '../BasicTable/BasicTable';
 
 export default function LabTabs(props) {
   const [value, setValue] = React.useState('1');
@@ -29,19 +30,12 @@ export default function LabTabs(props) {
         </Box>
         <TabPanel value="1">
           <DataGridDemo moves={props.moves}></DataGridDemo>
-          {/* <ul>
-            {props.moves.map((move, key)=> <li key={key}>Attack: {key + 1}: {move}</li>)}
-          </ul> */}
         </TabPanel>
         <TabPanel value="2">
-          <ul>
-            {props.moves.map((move, key)=> <li key={key}>Attack: {key + 1}: {move}</li>)}
-          </ul>
+          <DataGridDemo moves={props.moves}></DataGridDemo>
         </TabPanel>
         <TabPanel value="3">
-          <ul>
-            {props.moves.map((move, key)=> <li key={key}>Attack: {key + 1}: {move}</li>)}
-          </ul>
+          {/* <DataGridDemo moves={props.moves}></DataGridDemo> */}
         </TabPanel>
       </TabContext>
     </Box>
