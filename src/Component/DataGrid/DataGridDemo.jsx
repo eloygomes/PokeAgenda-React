@@ -12,13 +12,13 @@ export default function DataGridDemo(props) {
       field: 'level',
       headerName: 'Level',
       type: 'number',
-      width: 50,
+      width: 5,
       editable: false,
     },
     { 
       field: 'attackName', 
       headerName: 'Attack Name', 
-      width: 160 
+      width: 560 
     },
     
   ];
@@ -35,16 +35,16 @@ export default function DataGridDemo(props) {
   
 
   return (
-    <Box sx={{ height: 400, width: '100%' }}>
+    <Box sx={{ height: 450, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
         cellHeight={120}
-        pageSize={5}
+        pageSize={7}
         rowsPerPageOptions={[3]}
-        
         disableSelectionOnClick
       />
     </Box>
   );
 }
+  

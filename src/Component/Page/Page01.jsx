@@ -9,9 +9,8 @@ import Navbar from '../Navbar/Navbar';
 
 function Page01() {
     const [pokemons, setPokemons] = useState([]);
-    // const [speciesUrl, setSpeciesUrl] = useState([]);
     const [pkmnTypes, setPkmnTypes] = useState([]);
-    const [pokeListFiltered, setpokeListFiltered] = useState([]);
+    
 
     useEffect(() => {
         getPkmn();
@@ -27,7 +26,6 @@ function Page01() {
 
         axios.all(pkmnTypesUrl.map((pokeTypeUrl)=>axios.get(pokeTypeUrl))).then((res)=>{
             setPkmnTypes(res)
-            // console.log(pkmnTypes)
         })
     }
 
@@ -63,6 +61,8 @@ function Page01() {
         console.log(pokemons)
         
     }
+
+
 
     const handleClick = ({target})=>{
         console.log(target.parentElement.parentElement.children[1].children[0].textContent) // PKMN name

@@ -37,12 +37,14 @@ export default function PokeModal(props) {
           <Typography component="div" variant="h3">
             {props.name}
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            Pokemon type 1: {props.types[pkmnN].data.types[0] ? props.types[pkmnN].data.types[0].type.name :'undefined'}
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-          Pokemon type 2: {props.types[pkmnN].data.types[1] ? props.types[pkmnN].data.types[1].type.name :  'undefined'}
-          </Typography>
+          <Box sx={{display:'flex', flexDirection: 'justified-between'}}>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+              type A: {props.types[pkmnN].data.types[0] ? props.types[pkmnN].data.types[0].type.name :'undefined'}
+            </Typography>
+            <Typography sx={{paddingLeft: 20}} variant="subtitle1" color="text.secondary" component="div">
+              type B: {props.types[pkmnN].data.types[1] ? props.types[pkmnN].data.types[1].type.name :  'undefined'}
+            </Typography>
+          </Box>
         </CardContent>
           <LabTabs moves={pkmnMoves}></LabTabs>
         
