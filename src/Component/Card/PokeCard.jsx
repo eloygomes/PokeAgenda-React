@@ -14,8 +14,17 @@ import ModalDialog from '../Dialog/ModalDialog';
 export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDex, types, pokeNum}) {
 
 
+  const camelCase = (name)=>{
+    let splitted = name.split('');
+    let firstLetter = splitted[0].toUpperCase();
+    splitted.shift();
+    splitted.unshift(firstLetter);
+    let lettersJoined = splitted.join('')
+    return(lettersJoined);  
   
-  
+  }
+
+    
   return (
     <Card sx={{ maxWidth: 275 }}>
       <CardMedia
@@ -26,7 +35,7 @@ export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDe
       />
       <CardContent sx={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
         <Typography gutterBottom variant="body" component="div">
-          {name}
+          {camelCase(name)}
         </Typography>
         <Typography gutterBottom variant="body2" component="div">
           {`Pkmn N: ${NumPokeDex}`}

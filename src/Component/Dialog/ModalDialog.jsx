@@ -22,8 +22,6 @@ export default function ModalDialog(props) {
     setOpen(false);
   };
 
-  // console.log(props.types)
-
   return (
     <div style={{minHeight: 40}}>
       <Button  variant="contained" sx={{fontSize: 10}} onClick={handleClickOpen}>
@@ -44,7 +42,7 @@ export default function ModalDialog(props) {
           <PokeModal PokeImage={props.image} name={props.name} moves={props.moves} types={props.types} pokeNum={props.pokeNum}/>
           
           <DialogContentText>
-            Esse projeto foi desenvolvido por Eloy Gomes, API PokeAPI
+            Esse projeto foi desenvolvido por Eloy Gomes, todos os dados fora disponibilizados por API PokeAPI
           </DialogContentText>
         </DialogContent>
         <DialogActions>

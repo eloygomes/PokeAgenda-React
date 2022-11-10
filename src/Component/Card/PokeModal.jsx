@@ -20,8 +20,20 @@ export default function PokeModal(props) {
   useEffect(() => {
     setPkmnMoves(allMoves)    
     setpkmnN(props.pokeNum)
+
+    console.log(props.name)
        
 }, []);
+
+  const camelCase = (name)=>{
+    let splitted = name.split('');
+    let firstLetter = splitted[0].toUpperCase();
+    splitted.shift();
+    splitted.unshift(firstLetter);
+    let lettersJoined = splitted.join('')
+    return(lettersJoined);  
+  
+  }
 
 
   return (
@@ -35,7 +47,7 @@ export default function PokeModal(props) {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h3">
-            {props.name}
+            {camelCase(props.name)}
           </Typography>
           <Box sx={{display:'flex', flexDirection: 'justified-between'}}>
             <Typography variant="subtitle1" color="text.secondary" component="div">
@@ -47,10 +59,7 @@ export default function PokeModal(props) {
           </Box>
         </CardContent>
           <LabTabs moves={pkmnMoves}></LabTabs>
-        
       </Box>
-      
-
     </Card>
   );
 }
