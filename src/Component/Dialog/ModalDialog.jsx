@@ -37,9 +37,7 @@ export default function ModalDialog(props) {
           {"Pokemon Details"}
         </DialogTitle>
         <DialogContent>
-
           <PokeModal PokeImage={props.image} name={props.name} moves={props.moves} types={props.types} pokeNum={props.pokeNum}/>
-          
           <DialogContentText sx={{marginTop: 3}}>
             Esse projeto foi desenvolvido por Eloy Gomes, todos os dados fora disponibilizados por API PokeAPI
           </DialogContentText>

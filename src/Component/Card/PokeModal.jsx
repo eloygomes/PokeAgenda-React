@@ -40,7 +40,7 @@ export default function PokeModal(props) {
     <Card sx={{ display: 'flex' }}>
       <CardMedia
         component="img"
-        sx={{ width: 680, padding: 10, objectFit: 'contain', maxWidth: 500 }}
+        sx={{ width: 280, padding: 10, objectFit: 'contain', maxWidth: 500 }}
         image={props.PokeImage}
         alt="Live from space album cover"
       />
