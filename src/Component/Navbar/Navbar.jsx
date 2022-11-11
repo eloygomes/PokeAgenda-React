@@ -44,6 +44,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       width: '0ch',
       padding: '11px',
       paddingLeft: '48px',
+      paddingTop: '16px',
+      fontSize: '.8rem',
       '&:focus': {
         width: '23ch',
       },
@@ -54,7 +56,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar({ pokeFilter }) {
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" sx={{backgroundColor: '#607d8b'}}>
+      <AppBar position="fixed" sx={{backgroundColor: '#607d8b', height: 70, zIndex: 3}}>
         <Toolbar>
           <Box width='100%' display='flex' justifyContent='space-between'>
             <Link to='/'>
@@ -65,7 +67,7 @@ export default function Navbar({ pokeFilter }) {
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
-                placeholder="Digite o nome do pokemon"
+                placeholder="Pokemon Name"
                 inputProps={{ 'aria-label': 'pokemon name' }}
               />
             </Search>

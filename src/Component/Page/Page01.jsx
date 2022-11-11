@@ -1,9 +1,8 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
-import { Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import PokeCard from '../Card/PokeCard';
-import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
 
 
@@ -69,13 +68,11 @@ function Page01() {
     }
 
     return (
-        <>
-            <Navbar pokeFilter={pokeFilter}/>
-            <Header/>
-            
+        <div >
+            <Navbar pokeFilter={pokeFilter}/>           
             <Grid container
                 spacing={2}                  
-                sx={{backgroundColor:"white"}}>
+                sx={{backgroundColor:"lightsteelblue", paddingY: 10, paddingX: 5}}>
                 {pokemons.map((pokemon, key) => (
                     <Grid item
                         xs={2}
@@ -92,7 +89,7 @@ function Page01() {
                     </Grid>
                 ))
             } </Grid>
-        </>
+        </div>
     )
 }
 
