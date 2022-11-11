@@ -79,10 +79,7 @@ function Page01() {
                 {pokemons.map((pokemon, key) => (
                     <Grid item
                         xs={2}
-                        key={key}
-                        data-name="eloy"> 
-                        
-                        {/* <PokeCard image={pokemon.data.sprites.front_default} */}
+                        key={key}> 
                         <PokeCard image={pokemon.data.sprites.other.dream_world.front_default}
                             name={pokemon.data.name}
                             NumPokeDex={pokemon.data.id}
