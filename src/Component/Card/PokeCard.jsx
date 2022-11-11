@@ -30,7 +30,7 @@ export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDe
       <CardMedia
         component="img"
         alt={name}
-        height="140"
+        height="240"
         image={image}
       />
       <CardContent sx={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
@@ -38,7 +38,7 @@ export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDe
           {camelCase(name)}
         </Typography>
         <Typography gutterBottom variant="body2" component="div">
-          {`Pkmn N: ${NumPokeDex}`}
+          {`N.: ${NumPokeDex}`}
         </Typography>
         
       </CardContent>
