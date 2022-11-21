@@ -79,10 +79,6 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-function createData(name, calories, fat) {
-  return { name, calories, fat };
-}
-
 
 export default function CustomPaginationActionsTable({moves}) {
   const [page, setPage] = React.useState(0);
@@ -104,8 +100,8 @@ export default function CustomPaginationActionsTable({moves}) {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+    <TableContainer component={Paper} sx={{maxHeight: '300px'}}>
+      {/* <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
         <TableHead>
           <TableCell>Level</TableCell>
           <TableCell>Attack Name</TableCell>
@@ -145,7 +141,33 @@ export default function CustomPaginationActionsTable({moves}) {
             />
           </TableRow>
         </TableFooter>
-      </Table>
+      </Table> */}
+
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>john</td>
+            <td>33</td>
+            <td>texte</td>
+          </tr>
+          <tr>
+            <td>smith</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td>jane</td>
+            <td>24</td>
+          </tr>
+        </tbody>
+      </table>
     </TableContainer>
   );
 }
