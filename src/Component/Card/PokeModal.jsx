@@ -20,8 +20,6 @@ export default function PokeModal(props) {
   useEffect(() => {
     setPkmnMoves(allMoves)    
     setpkmnN(props.pokeNum)
-
-    console.log(props.name)
        
 }, []);
 
@@ -51,10 +49,10 @@ export default function PokeModal(props) {
           </Typography>
           <Box sx={{display:'flex', flexDirection: 'justified-between'}}>
             <Typography variant="subtitle1" color="text.secondary" component="div">
-              type A: {props.types[pkmnN].data.types[0] ? props.types[pkmnN].data.types[0].type.name :'undefined'}
+              type A: {props.types[pkmnN].data.types[0] ? camelCase(props.types[pkmnN].data.types[0].type.name) :''}
             </Typography>
             <Typography sx={{paddingLeft: 20}} variant="subtitle1" color="text.secondary" component="div">
-              type B: {props.types[pkmnN].data.types[1] ? props.types[pkmnN].data.types[1].type.name :  'undefined'}
+              {props.types[pkmnN].data.types[1] ? 'type B:' : ''} {props.types[pkmnN].data.types[1] ? camelCase(props.types[pkmnN].data.types[1].type.name) :  ''}
             </Typography>
           </Box>
         </CardContent>
