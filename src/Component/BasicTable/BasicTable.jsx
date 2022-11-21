@@ -12,7 +12,7 @@ export default function BasicTable({moves}) {
 
       const rows = moves;
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} >
       <Table sx={{ minWidth: 150 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -25,6 +25,7 @@ export default function BasicTable({moves}) {
             
             <TableRow
               key={row}
+              
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell component="th" scope="row">{index}</TableCell>
               <TableCell component="th" scope="row">{row}</TableCell>
@@ -32,6 +33,7 @@ export default function BasicTable({moves}) {
             </TableRow>
           ))}
         </TableBody>
+        
       </Table>
     </TableContainer>
   );

@@ -8,6 +8,7 @@ import TabPanel from '@material-ui/lab/TabPanel';
 import './LabTabs.css';
 import DataGridDemo from '../DataGrid/DataGridDemo';
 import BasicTable from '../BasicTable/BasicTable';
+import CustomPaginationActionsTable from '../BasicTable/CustomPaginationActionsTable';
 
 export default function LabTabs(props) {
   const [value, setValue] = React.useState('1');
@@ -27,8 +28,7 @@ export default function LabTabs(props) {
           </TabList>
         </Box>
         <TabPanel value="1">
-          {/* <DataGridDemo moves={props.moves}></DataGridDemo> */}
-          <BasicTable moves={props.moves}/>
+          <CustomPaginationActionsTable moves={props.moves}/>
         </TabPanel>
         <TabPanel value="2">
           <DataGridDemo moves={props.moves}></DataGridDemo>
