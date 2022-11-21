@@ -12,7 +12,6 @@ import ModalDialog from '../Dialog/ModalDialog';
 
 export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDex, types, pokeNum}) {
 
-
   const camelCase = (name)=>{
     let splitted = name.split('');
     let firstLetter = splitted[0].toUpperCase();

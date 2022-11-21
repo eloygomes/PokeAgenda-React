@@ -47,21 +47,16 @@ function Page01() {
             getPkmn();
         }
         
-
         for (var i in pokemons) {
             if (pokemons[i].data.name.includes(name)) {
-                filtered.push(pokemons[i])
-                
+                filtered.push(pokemons[i])                
             } 
- 
+
         }
         console.log(filtered)
         setPokemons(filtered);
-        console.log(pokemons)
-        
+        console.log(pokemons)        
     }
-
-
 
     const handleClick = ({target})=>{
         console.log(target.parentElement.parentElement.children[1].children[0].textContent) // PKMN name
@@ -70,13 +65,9 @@ function Page01() {
     return (
         <div >
             <Navbar pokeFilter={pokeFilter}/>           
-            <Grid container
-                spacing={2}                  
-                sx={{backgroundColor:"lightsteelblue", paddingY: 10, paddingX: 5}}>
+            <Grid container spacing={2} sx={{backgroundColor:"lightsteelblue", paddingY: 10, paddingX: 5}}>
                 {pokemons.map((pokemon, key) => (
-                    <Grid item
-                        xs={2}
-                        key={key}> 
+                    <Grid item xs={2} key={key}> 
                         <PokeCard image={pokemon.data.sprites.other.dream_world.front_default}
                             name={pokemon.data.name}
                             NumPokeDex={pokemon.data.id}
