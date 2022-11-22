@@ -41,7 +41,7 @@ export default function DataGridDemo(props) {
         pageSize={7}
         rowsPerPageOptions={[3]}
         disableSelectionOnClick
-      />
+      /> 
     </Box>
   );
 }

@@ -30,7 +30,6 @@ export default function PokeModal(props) {
     splitted.unshift(firstLetter);
     let lettersJoined = splitted.join('')
     return(lettersJoined);  
-  
   }
 
 
