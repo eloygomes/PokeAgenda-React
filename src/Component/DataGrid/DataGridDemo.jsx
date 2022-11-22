@@ -41,7 +41,14 @@ export default function DataGridDemo(props) {
         pageSize={7}
         rowsPerPageOptions={[3]}
         disableSelectionOnClick
-      />
+      />       <DataGrid
+      rows={rows}
+      columns={columns}
+      cellHeight={120}
+      pageSize={7}
+      rowsPerPageOptions={[3]}
+      disableSelectionOnClick
+    />
     </Box>
   );
 }
