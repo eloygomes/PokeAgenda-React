@@ -39,6 +39,11 @@ function Page01() {
         })
     }
 
+
+    const pokeBaseStatus = ()=>{
+
+    }
+
     const pokeFilter = (name) => {
         console.log(name)
 
@@ -55,11 +60,29 @@ function Page01() {
         }
         console.log(filtered)
         setPokemons(filtered);
-        console.log(pokemons)        
+
+
+
+
+
+
+        console.log(pokemons[0].data.stats)        
+        // console.log(pokemons[0].data.stats[0]) //works
+        // console.log(pokemons[0].data.stats[1]) //
+
+        // console.log(pokemons[0].data.stats[0].stat.name) //base status name        
+        // console.log(pokemons[1].data.stats[0].stat.name) //base status name        
+        
+        // console.log(pokemons[0].data.stats[0].base_stat) //base status        
+        // console.log(pokemons[1].data.stats[0].base_stat) //base status        
+        
     }
+    
+
 
     const handleClick = ({target})=>{
         console.log(target.parentElement.parentElement.children[1].children[0].textContent) // PKMN name
+        
     }
 
     return (
@@ -75,6 +98,7 @@ function Page01() {
                             handleClick={handleClick}
                             types={pkmnTypes}
                             pokeNum={key}
+                            baseStatus={pokemon.data}
                             
                             />
                     </Grid>

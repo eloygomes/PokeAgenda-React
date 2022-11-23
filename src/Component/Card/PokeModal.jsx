@@ -55,7 +55,7 @@ export default function PokeModal(props) {
             </Typography>
           </Box>
         </CardContent>
-          <LabTabs moves={pkmnMoves}></LabTabs>
+          <LabTabs moves={pkmnMoves} baseStatus={props.baseStatus}></LabTabs>
       </Box>
     </Card>
   );

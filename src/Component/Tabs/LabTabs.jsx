@@ -4,19 +4,74 @@ import Tab from '@material-ui/core/Tab';
 import TabContext from '@material-ui/lab/TabContext';
 import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
+import { useState, useEffect } from 'react';
 
 import './LabTabs.css';
-import DataGridDemo from '../DataGrid/DataGridDemo';
-import BasicTable from '../BasicTable/BasicTable';
-import CustomPaginationActionsTable from '../BasicTable/CustomPaginationActionsTable';
 import CustomizedTables from '../BasicTable/CustomizedTables';
+import BaseStatusNumTable from '../BasicTable/BaseStatusNumTable';
 
 export default function LabTabs(props) {
   const [value, setValue] = React.useState('1');
 
+  
+  const [baseStatNum, setBaseStatNum] = useState();
+  const [baseStatName, setBaseStatName] = useState();
+
+
+
+  useEffect(() => {
+    baseStatusDataFormat(props.baseStatus);
+  }, []);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+
+  const baseStatusDataFormat = (bStatus) => {
+
+    // GET BASE STATS ARRAY
+
+    // console.log(bStatus)
+    // console.log(bStatus.name)
+    // console.log(bStatus.stats.length)
+    // console.log(bStatus.stats[0])
+
+    var bStatusList = [];
+
+    for (var i = 0; i < bStatus.stats.length; i++) {
+      bStatusList.push(bStatus.stats[i])
+    }
+    // console.log(bStatusList)
+    // console.log(baseStatArr)
+
+    var bStatusNum = [];
+
+    for (i = 0; i < bStatusList.length; i++) {
+      bStatusNum.push(bStatusList[i].base_stat)
+    }
+    setBaseStatNum(bStatusNum);
+    console.log(baseStatNum)
+
+
+    // GET BASE STATS NAME
+    console.log(bStatus)
+    // console.log(bStatus.name)
+    // console.log(bStatus.stats.length)
+    // console.log(bStatus.stats[0])
+
+    var bStatusListName = [];
+
+    for (var i = 0; i < bStatus.stats.length; i++) {
+      bStatusListName.push(bStatusList[i].stat.name)
+    }
+
+    console.log(bStatusListName)
+    setBaseStatName(bStatusListName)
+  }
+
+  
+
 
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
@@ -29,13 +84,13 @@ export default function LabTabs(props) {
           </TabList>
         </Box>
         <TabPanel value="1">
-          <CustomizedTables moves={props.moves}/>
+          <CustomizedTables data={props.moves} />
         </TabPanel>
         <TabPanel value="2">
-        <CustomizedTables moves={props.moves}/>
+          <CustomizedTables data={props.moves} />
         </TabPanel>
         <TabPanel value="3">
-        <CustomizedTables moves={props.moves}/>
+          <BaseStatusNumTable baseStatNum={baseStatNum} baseStatName={baseStatName}/>
         </TabPanel>
       </TabContext>
     </Box>
