@@ -8,6 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
+import LinearIndeterminate from '../Progress/LinearIndeterminate';
+import CamelCase from '../Aux/CamelCase';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -43,13 +45,21 @@ export default function BaseStatusNumTable({baseStatNum, baseStatName}) {
           <TableRow>
             <StyledTableCell sx={{ width: 100 }}>Base Stats</StyledTableCell>
             <StyledTableCell>Value</StyledTableCell>
+            <StyledTableCell></StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row, i) => (
             <StyledTableRow key={row + Math.random()}>
-              <StyledTableCell align="left">{baseStatName[i]}</StyledTableCell>
-              <StyledTableCell align="left">{row}</StyledTableCell>
+              <StyledTableCell align="left" sx={{ minWidth: 100, width: '30%' }}>
+                {CamelCase(baseStatName[i])}
+                </StyledTableCell>
+              <StyledTableCell align="left">
+                {row}
+                </StyledTableCell>
+              <StyledTableCell align="left" sx={{ minWidth: 100, width: '100%' }}>
+                <LinearIndeterminate value={row}/>
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

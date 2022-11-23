@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
+import CamelCase from '../Aux/CamelCase';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -48,7 +49,7 @@ export default function CustomizedTables({data, baseStatNum}) {
           {rows.map((row, i) => (
             <StyledTableRow key={row}>
               <StyledTableCell sx={{ paddingLeft: 1, textAlign: 'center' }}>{i > 0 ? i+i : i+1}</StyledTableCell>
-              <StyledTableCell align="left">{row}</StyledTableCell>
+              <StyledTableCell align="left">{CamelCase(row)}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
