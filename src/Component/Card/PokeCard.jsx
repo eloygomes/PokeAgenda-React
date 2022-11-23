@@ -10,7 +10,7 @@ import './PokeCard.css';
 import ModalDialog from '../Dialog/ModalDialog';
 
 
-export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDex, types, pokeNum}) {
+export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDex, types, pokeNum, baseStatus}) {
 
   const camelCase = (name)=>{
     let splitted = name.split('');
@@ -42,7 +42,7 @@ export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDe
         
       </CardContent>
       <CardActions sx={{ display:'flex', justifyContent:'flex-end'}}>
-         <ModalDialog image={image} name={name} moves={moves} types={types} pokeNum={pokeNum}/>
+         <ModalDialog image={image} name={name} moves={moves} types={types} pokeNum={pokeNum} baseStatus={baseStatus}/>
       </CardActions>
     </Card>
   );

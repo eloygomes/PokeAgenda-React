@@ -30,24 +30,25 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedTables({data, baseStatNum}) {
+export default function BaseStatusNumTable({baseStatNum, baseStatName}) {
     
-  
+  console.log(baseStatNum)
+  console.log(baseStatName)
 
-  const rows = data;
+  const rows = baseStatNum;
   return (
     <TableContainer component={Paper} sx={{ maxHeight: 440 }}>
       <Table sx={{ minWidth: 100 }} stickyHeader aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell sx={{ width: 100 }}>Level earned</StyledTableCell>
-            <StyledTableCell>Attack Name</StyledTableCell>
+            <StyledTableCell sx={{ width: 100 }}>Base Stats</StyledTableCell>
+            <StyledTableCell>Value</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row, i) => (
-            <StyledTableRow key={row}>
-              <StyledTableCell sx={{ paddingLeft: 1, textAlign: 'center' }}>{i > 0 ? i+i : i+1}</StyledTableCell>
+            <StyledTableRow key={row + Math.random()}>
+              <StyledTableCell align="left">{baseStatName[i]}</StyledTableCell>
               <StyledTableCell align="left">{row}</StyledTableCell>
             </StyledTableRow>
           ))}
