@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import LabTabs from '../Tabs/LabTabs';
 import { useState, useEffect } from 'react';
+import CamelCase from '../Aux/CamelCase';
 
 export default function PokeModal(props) {
   
@@ -23,15 +24,6 @@ export default function PokeModal(props) {
        
 }, []);
 
-  const camelCase = (name)=>{
-    let splitted = name.split('');
-    let firstLetter = splitted[0].toUpperCase();
-    splitted.shift();
-    splitted.unshift(firstLetter);
-    let lettersJoined = splitted.join('')
-    return(lettersJoined);  
-  }
-
 
   return (
     <Card sx={{ display: 'flex' }}>
@@ -44,14 +36,14 @@ export default function PokeModal(props) {
       <Box sx={{ display: 'flex', flexDirection: 'column', maxHeight: '70vh' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h3">
-            {camelCase(props.name)}
+            {CamelCase(props.name)}
           </Typography>
           <Box sx={{display:'flex', flexDirection: 'justified-between'}}>
             <Typography variant="subtitle1" color="text.secondary" component="div">
-              type A: {props.types[pkmnN].data.types[0] ? camelCase(props.types[pkmnN].data.types[0].type.name) :''}
+              type A: {props.types[pkmnN].data.types[0] ? CamelCase(props.types[pkmnN].data.types[0].type.name) :''}
             </Typography>
             <Typography sx={{paddingLeft: 20}} variant="subtitle1" color="text.secondary" component="div">
-              {props.types[pkmnN].data.types[1] ? 'type B:' : ''} {props.types[pkmnN].data.types[1] ? camelCase(props.types[pkmnN].data.types[1].type.name) :  ''}
+              {props.types[pkmnN].data.types[1] ? 'type B:' : ''} {props.types[pkmnN].data.types[1] ? CamelCase(props.types[pkmnN].data.types[1].type.name) :  ''}
             </Typography>
           </Box>
         </CardContent>
