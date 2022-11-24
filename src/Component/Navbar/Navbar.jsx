@@ -13,12 +13,15 @@ const Search = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
+    
   },
   marginLeft: 0,
   width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up('xs')]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: '180px',
+    height: '40px',
+    marginTop: '8px'
   },
 }));
 
@@ -53,14 +56,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
 export default function Navbar({ pokeFilter }) {
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="fixed" sx={{backgroundColor: '#607d8b', height: 70, zIndex: 3}}>
-        <Toolbar>
+      <AppBar position="fixed" sx={{ minHeight:70 , backgroundColor: '#607d8b', height: 70, zIndex: 3}}>
+        <Toolbar sx={{paddingTop:'5px'}}>
           <Box width='100%' display='flex' justifyContent='space-between'>
             <Link to='/'>
-              <Box component='img' height='3rem'src='/assets/pokemon_logo.png'/>
+              {/* <Box component='img' height='3rem'src='/assets/pokemon_logo.png' sx={{height:2.3}}/> */}
+              <Box component='img' height='1rem' src='/assets/pokemon_logo.png' sx={{minHeight:50}}/>
             </Link>
             <Search onChange={(e)=>pokeFilter(e.target.value)}>
               <SearchIconWrapper>
