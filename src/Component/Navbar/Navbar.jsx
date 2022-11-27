@@ -23,6 +23,12 @@ const Search = styled('div')(({ theme }) => ({
     height: '40px',
     marginTop: '8px'
   },
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(1),
+    width: '52px',
+    height: '40px',
+    marginTop: '8px'
+  },
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -43,7 +49,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('xs')]: {
       width: '0ch',
       padding: '11px',
       paddingLeft: '48px',
@@ -51,6 +57,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       fontSize: '.8rem',
       '&:focus': {
         width: '23ch',
+      },
+      [theme.breakpoints.up('sm')]: {
+        width: '0ch',
+        padding: '11px',
+        paddingLeft: '48px',
+        paddingTop: '16px',
+        fontSize: '.8rem',
+        '&:focus': {
+          width: '23ch',
+        },
       },
     },
   },

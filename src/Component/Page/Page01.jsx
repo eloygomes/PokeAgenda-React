@@ -71,7 +71,7 @@ function Page01() {
             <Navbar pokeFilter={pokeFilter}/>           
             <Grid container spacing={2} sx={{backgroundColor:"lightsteelblue", paddingY: 10, paddingX: 5}}>
                 {pokemons.map((pokemon, key) => (
-                    <Grid item xl={2.4} md={3} sm={4} xs={6} key={key}> 
+                    <Grid item xl={2.4} md={3} sm={6} xs={12} key={key}> 
                         <PokeCard image={pokemon.data.sprites.other.dream_world.front_default}
                             name={pokemon.data.name}
                             NumPokeDex={pokemon.data.id}
