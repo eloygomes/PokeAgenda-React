@@ -24,7 +24,8 @@ export default function PokeCard({name, image, moves, GR, handleClick, NumPokeDe
 
     
   return (
-    <Card sx={{ maxWidth: 275 }}>
+    // <Card sx={{ maxWidth: 275 }}>
+    <Card sx={{ maxWidth: 335 }}>
       <CardMedia
         component="img"
         alt={name}
