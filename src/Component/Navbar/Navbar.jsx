@@ -81,7 +81,7 @@ export default function Navbar({ pokeFilter }) {
           <Box width='100%' display='flex' justifyContent='space-between'>
             <Link to='/'>
               {/* <Box component='img' height='3rem'src='/assets/pokemon_logo.png' sx={{height:2.3}}/> */}
-              <Box component='img' height='1rem' src='/assets/pokemon_logo.png' sx={{minHeight:50}}/>
+              <Box component='img' height='1rem' src='/assets/pokeagendaLogo.png' sx={{minHeight:50}}/>
             </Link>
             <Search onChange={(e)=>pokeFilter(e.target.value)}>
               <SearchIconWrapper>
